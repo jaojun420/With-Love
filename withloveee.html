@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Are You Ready? 💖</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  text-align: center;
+  color: white;
+  background: black;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+button {
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: #444;
+  color: white;
+}
+
+img {
+  margin-top: 30px;
+  width: 300px;
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+  font-size: 24px;
+  margin-top: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="start">
+  <h1>Are you ready to join?? 😏💖</h1>
+
+  <button class="yes" onclick="yesClicked()">Yes ❤️</button>
+  <button class="no" onclick="noClicked()">No 😡</button>
+</div>
+
+<div id="yesSection" class="hidden">
+  <h1>Ilyouuuu 💖💖💖</h1>
+  <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+  <img src="yes.jpg.jpeg">
+</div>
+
+<div id="noSection" class="hidden">
+  <h1>DON'T YOU DARE!!!!! 😡🔥</h1>
+  <img src="no.jpg.jpg">
+</div>
+
+<audio id="noSound">
+  <source src="no.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function yesClicked() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("yesSection").style.display = "block";
+}
+
+function noClicked() {
+  document.getElementById("start").style.display = "none";
+  document.getElementById("noSection").style.display = "block";
+
+  var sound = document.getElementById("noSound");
+  sound.play();
+}
+</script>
+
+</body>
+</html>
