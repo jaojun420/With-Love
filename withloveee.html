@@ -8,14 +8,23 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial;
-  text-align: center;
-  color: white;
   background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   overflow: hidden;
+  color: white;
 }
 
+/* 💖 CENTER BOX */
 .container {
-  margin-top: 100px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
 }
 
 button {
@@ -54,7 +63,7 @@ img {
   margin-top: 20px;
 }
 
-/* 💖 HEART STYLES */
+/* 💖 HEARTS */
 .heart {
   position: fixed;
   bottom: -20px;
@@ -74,7 +83,6 @@ img {
   }
 }
 </style>
-
 </head>
 
 <body>
