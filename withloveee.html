@@ -112,7 +112,7 @@ function yesClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("yesSection").style.display = "block";
 
-  startHearts(); // 💖 start hearts
+  startHearts();
 }
 
 function noClicked() {
@@ -128,7 +128,6 @@ function goBack() {
   document.getElementById("start").style.display = "block";
 }
 
-/* 💖 HEART FUNCTION */
 function startHearts() {
   setInterval(() => {
     let heart = document.createElement("div");
