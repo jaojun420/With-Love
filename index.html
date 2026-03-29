@@ -122,7 +122,7 @@ img {
 
 <!-- 💖 NO SECTION -->
 <div id="noSection" class="fullscreen">
-  <h1>DON'T YOU DARE!!!!! 😡🔥</h1>
+  <h1>DON'T YOU DARE!!!!! 😡🔥<br> Stop doing OA</h1>
   <img src="no.jpg.jpeg"><br><br>
 
   <button class="back" onclick="goBack()">Okay okay 😭 take me back</button>
@@ -132,7 +132,8 @@ img {
 <audio id="noSound">
   <source src="no.mp3.mp3" type="audio/mpeg">
 </audio>
-  <audio id="yesSound">
+
+<audio id="yesSound">
   <source src="yes.mp3.mp3" type="audio/mpeg">
 </audio>
 
@@ -141,6 +142,11 @@ function yesClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("yesSection").style.display = "flex";
 
+  // ✅ PLAY YES SOUND
+  document.getElementById("yesSound").play().catch(e => {
+    console.log("Audio blocked:", e);
+  });
+
   startHearts();
 }
 
@@ -148,7 +154,9 @@ function noClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("noSection").style.display = "flex";
 
-  document.getElementById("noSound").play();
+  document.getElementById("noSound").play().catch(e => {
+    console.log("Audio blocked:", e);
+  });
 }
 
 function goBack() {
@@ -176,5 +184,7 @@ function startHearts() {
 
 </body>
 </html>
+
+
 
 
