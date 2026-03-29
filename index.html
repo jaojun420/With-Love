@@ -132,7 +132,7 @@ img {
 <audio id="noSound">
   <source src="no.mp3.mp3" type="audio/mpeg">
 </audio>
-
+  
 <audio id="yesSound">
   <source src="yes.mp3.mp3" type="audio/mpeg">
 </audio>
@@ -142,14 +142,13 @@ function yesClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("yesSection").style.display = "flex";
 
-  // ✅ PLAY YES SOUND
-  document.getElementById("yesSound").play().catch(e => {
-    console.log("Audio blocked:", e);
-  });
+  let audio = document.getElementById("yesSound");
+  audio.pause();
+  audio.currentTime = 0;
+  audio.play();
 
   startHearts();
 }
-
 function noClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("noSection").style.display = "flex";
