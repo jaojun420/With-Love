@@ -74,11 +74,16 @@ button {
 
 /* 💖 IMAGE */
 img {
-  margin-top: 30px;
-  width: 300px;
+  margin-top: 20px;
+  width: 30%;
+  max-width: 350px;
+  height: auto;
   border-radius: 20px;
 }
-
+  .fullscreen {
+  padding: 20px;
+  box-sizing: border-box;
+}
 /* 💖 HEARTS */
 .heart {
   position: fixed;
@@ -142,27 +147,36 @@ function yesClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("yesSection").style.display = "flex";
 
-  let audio = document.getElementById("yesSound");
-  audio.pause();
-  audio.currentTime = 0;
-  audio.play();
+  let yesAudio = document.getElementById("yesSound");
+  let noAudio = document.getElementById("noSound");
+
+  noAudio.pause();              // stop NO sound if playing
+  yesAudio.currentTime = 0;
+  yesAudio.loop = true;
+  yesAudio.play();
 
   startHearts();
 }
+
 function noClicked() {
   document.getElementById("start").style.display = "none";
   document.getElementById("noSection").style.display = "flex";
 
-  document.getElementById("noSound").play().catch(e => {
-    console.log("Audio blocked:", e);
-  });
-}
+  let yesAudio = document.getElementById("yesSound");
+  let noAudio = document.getElementById("noSound");
 
+  yesAudio.pause();             // stop YES sound
+  noAudio.currentTime = 0;
+  noAudio.loop = true;
+  noAudio.play();
+}
 function goBack() {
   document.getElementById("noSection").style.display = "none";
   document.getElementById("start").style.display = "flex";
-}
 
+  document.getElementById("noSound").pause();
+  document.getElementById("yesSound").pause();
+}
 function startHearts() {
   setInterval(() => {
     let heart = document.createElement("div");
@@ -182,7 +196,7 @@ function startHearts() {
 </script>
 
 </body>
-</html>yes song is not playing when i clicked yes
+</html>
 
 
 
